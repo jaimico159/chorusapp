@@ -1,13 +1,13 @@
-module Types
-  class QueryType < Types::BaseObject
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
+# frozen_string_literal: true
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
-    end
+class Types::QueryType < GraphQL::Schema::Object
+  description 'The query root of this schema'
+
+  Util::FieldCombiner.combine(
+    [
+      
+    ]
+  ).each do |_k, field|
+    add_field(field)
   end
 end
