@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_05_163252) do
+ActiveRecord::Schema.define(version: 2019_08_05_163631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 2019_08_05_163252) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "ward_id"
+    t.bigint "stake_id"
+    t.bigint "city_id"
+    t.index ["city_id"], name: "index_members_on_city_id"
+    t.index ["stake_id"], name: "index_members_on_stake_id"
+    t.index ["ward_id"], name: "index_members_on_ward_id"
   end
 
   create_table "stakes", force: :cascade do |t|
@@ -50,6 +56,9 @@ ActiveRecord::Schema.define(version: 2019_08_05_163252) do
     t.index ["stake_id"], name: "index_wards_on_stake_id"
   end
 
+  add_foreign_key "members", "cities"
+  add_foreign_key "members", "stakes"
+  add_foreign_key "members", "wards"
   add_foreign_key "stakes", "cities"
   add_foreign_key "wards", "cities"
   add_foreign_key "wards", "stakes"
