@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_08_05_163631) do
     t.string "first_name"
     t.string "last_name"
     t.integer "age"
+    t.integer "voice"
     t.integer "role"
     t.string "email"
     t.string "phone"
