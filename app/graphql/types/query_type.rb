@@ -5,7 +5,7 @@ class Types::QueryType < GraphQL::Schema::Object
 
   Util::FieldCombiner.combine(
     [
-      
+      QueryTypes::CityQueryType
     ]
   ).each do |_k, field|
     add_field(field)

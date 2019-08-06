@@ -7,7 +7,7 @@ class Types::ModelTypes::MemberType < GraphQL::Schema::Object
   field :email, String, null: false
   field :phone, String, null: false
   field :role, String, null: false
-  field :stake, Types::ModelTypes::StakeType
-  field :ward, Types::ModelTypes::WardType
-  field :city, Types::ModelTypes::CityType
+  field :stake, Types::ModelTypes::StakeType, null: true
+  field :ward, Types::ModelTypes::WardType, null: true
+  field :city, Types::ModelTypes::CityType, null: true
 end

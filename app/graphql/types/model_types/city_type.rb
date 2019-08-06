@@ -3,7 +3,7 @@ class Types::ModelTypes::CityType < GraphQL::Schema::Object
 
   field :id, ID, null: false
   field :name, String, null: false
-  field :stakes, [Types::ModelTypes::StakeType]
-  field :wards, [Types::ModelTypes::WardType]
-  field :members, [Types::ModelTypes::MemberType]
+  field :stakes, [Types::ModelTypes::StakeType], null: true
+  field :wards, [Types::ModelTypes::WardType], null: true
+  field :members, [Types::ModelTypes::MemberType], null: true
 end
