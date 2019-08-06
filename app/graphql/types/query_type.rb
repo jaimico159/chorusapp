@@ -10,4 +10,8 @@ class Types::QueryType < GraphQL::Schema::Object
   ).each do |_k, field|
     add_field(field)
   end
+
+  def cities
+    City.all
+  end
 end
